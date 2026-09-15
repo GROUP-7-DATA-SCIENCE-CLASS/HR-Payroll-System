@@ -55,5 +55,16 @@ NET PAY          : UGX {net:,.0f}
 """
     return payslip
 
+# ---------------------------------------------
+    
+# String Representation
+# ---------------------------------------------
+def _str_(self):
+    return (f"{self.employee_number} | "
+        f"{self.name} | "
+        f"Net Pay: UGX {self.calculate_net_pay():,.0f}")
+
+
+
 
 
