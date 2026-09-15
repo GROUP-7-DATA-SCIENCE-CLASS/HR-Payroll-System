@@ -17,3 +17,8 @@ def validate_inputs(self):
 def calculate_regular_pay(self):
         regular_hours = min(self.hours_worked, REGULAR_HOURS)
         return regular_hours * self.hourly_rate
+  # ---------------------------------------------
+    # Overtime Hours
+    # ---------------------------------------------
+def calculate_overtime_hours(self):
+        return max(0, self.hours_worked - REGULAR_HOURS)
