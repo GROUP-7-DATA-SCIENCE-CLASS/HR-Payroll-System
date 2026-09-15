@@ -32,4 +32,28 @@ def generate_payslip(self):
 
     payslip = f"""
 
+==================================================
+             WEEKLY EMPLOYEE PAYSLIP
+==================================================
+
+Employee Name    : {self.name}
+Employee Number  : {self.employee_number}
+
+Hours Worked     : {self.hours_worked}
+Hourly Rate      : UGX {self.hourly_rate:,.0f}
+
+Regular Pay      : UGX {self.calculate_regular_pay():,.0f}
+Overtime Hours   : {self.calculate_overtime_hours()}
+Overtime Pay     : UGX {self.calculate_overtime_pay():,.0f}
+
+Gross Pay        : UGX {gross:,.0f}
+Tax Deducted     : UGX {tax:,.0f}
+
+NET PAY          : UGX {net:,.0f}
+
+==================================================
+"""
+    return payslip
+
+
 
