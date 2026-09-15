@@ -16,3 +16,10 @@ def calculate_tax(self):
     taxable_amount = gross_pay - TAX_THRESHOLD
     return taxable_amount * TAX_RATE
 
+# ---------------------------------------------
+# Net Pay
+# ---------------------------------------------
+def calculate_net_pay(self):
+    return self.calculate_gross_pay() - self.calculate_tax()
+
+
