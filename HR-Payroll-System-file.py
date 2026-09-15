@@ -22,4 +22,14 @@ def calculate_tax(self):
 def calculate_net_pay(self):
     return self.calculate_gross_pay() - self.calculate_tax()
 
+# ---------------------------------------------
+# Payslip Generator
+# ---------------------------------------------
+def generate_payslip(self):
+    gross = self.calculate_gross_pay()
+    tax = self.calculate_tax()
+    net = self.calculate_net_pay()
+
+    payslip = f"""
+
 
