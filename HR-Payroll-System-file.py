@@ -22,3 +22,12 @@ def calculate_regular_pay(self):
     # ---------------------------------------------
 def calculate_overtime_hours(self):
         return max(0, self.hours_worked - REGULAR_HOURS)
+
+ # ---------------------------------------------
+    # Overtime Pay
+    # ---------------------------------------------
+def calculate_overtime_pay(self):
+        overtime_hours = self.calculate_overtime_hours()
+        overtime_rate = self.hourly_rate * OVERTIME_RATE_MULTIPLIER
+        return overtime_hours * overtime_rate
+
