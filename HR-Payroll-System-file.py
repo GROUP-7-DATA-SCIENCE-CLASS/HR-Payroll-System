@@ -21,5 +21,23 @@ OVERTIME_RATE_MULTIPLIER = 1.5
 TAX_THRESHOLD = 100000
 TAX_RATE = 0.10
 
+# =======================================================
+# EMPLOYEE CLASS
+# =====================================================
 
-# 
+class Employee:
+    """
+    Represents one employee in the payroll system.
+    Stores employee information and performs salary calculations.
+    """
+
+    def __init__(self, name, employee_number, hours_worked, hourly_rate):
+        self.name = name
+        self.employee_number = employee_number
+        self.hours_worked = hours_worked
+        self.hourly_rate = hourly_rate
+
+        # Validate immediately when object is created.
+        self.validate_inputs()
+
+    # 
