@@ -56,9 +56,9 @@ python Group6_System.py
 
 ## Group Members
 
-1. Timothy Mugisha
-2. Member Two
-3. Member Three
-4. Member Four
-5. Member Five
-6. Member Six
+1. Mugisha Timothy
+2. Natuyamba Conrad
+3. Mutagamba Jasmine Martha
+4. Tana Wasolo
+5. Miracle Musiime
+6. Harry Ndambiire
