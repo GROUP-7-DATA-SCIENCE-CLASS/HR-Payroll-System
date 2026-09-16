@@ -136,5 +136,41 @@ def _str_(self):
         f"{self.name} | "
         f"Net Pay: UGX {self.calculate_net_pay():,.0f}")
 
+  
+  
+# =====================================================
+# PAYROLL SYSTEM CLASS
+# =====================================================
+
+class PayrollSystem:
+    """
+    Stores and manages multiple employees.
+    """
+
+    def _init_(self):
+        self.employees = []
+# ---------------------------------------------
+# Add Employee
+# ---------------------------------------------
+    def add_employee(self, employee):
+
+        # Check duplicate employee number
+        for emp in self.employees:
+            if emp.employee_number == employee.employee_number:
+                raise ValueError(
+                    f"Employee number {employee.employee_number} already exists."
+                )
+
+        self.employees.append(employee)
+        print(f"Employee '{employee.name}' added successfully.")
 
 
+# ---------------------------------------------
+# Find Employee
+# ---------------------------------------------
+    def find_employee(self, employee_number):
+        for employee in self.employees:
+            if employee.employee_number == employee_number:
+                return employee
+
+        return None
