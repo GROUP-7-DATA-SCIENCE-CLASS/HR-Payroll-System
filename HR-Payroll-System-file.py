@@ -174,3 +174,11 @@ class PayrollSystem:
                 return employee
 
         return None
+# ---------------------------------------------
+# Display All Payslips
+# ---------------------------------------------
+    def display_all_payslips(self):
+        print("\n========== ALL EMPLOYEE PAYSLIPS ==========")
+
+        for employee in self.employees:
+            print(employee.generate_payslip())
