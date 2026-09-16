@@ -283,3 +283,10 @@ def main():
         print(found.generate_payslip())
     else:
         print("Employee not found.")
+
+
+    # Display all payslips
+    payroll.display_all_payslips()
+
+    # Weekly summary
+    payroll.weekly_summary()
