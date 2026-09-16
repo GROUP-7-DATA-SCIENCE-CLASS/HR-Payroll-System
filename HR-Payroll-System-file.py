@@ -273,3 +273,13 @@ def main():
 
     except ValueError as error:
         print("Error:", error)
+
+     # Search Employee
+    print("\nSearching employee EMP002...\n")
+
+    found = payroll.find_employee("EMP002")
+
+    if found:
+        print(found.generate_payslip())
+    else:
+        print("Employee not found.")
