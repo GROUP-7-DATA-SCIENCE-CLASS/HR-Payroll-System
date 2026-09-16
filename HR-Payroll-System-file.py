@@ -244,4 +244,32 @@ def main():
         print("Error:", error)
 
 
-    
+     # Invalid Employee
+    print("\nTrying invalid employee...\n")
+
+    try:
+        invalid_employee = Employee(
+            "Peter",
+            "EMP004",
+            -5,
+            7000
+        )
+        payroll.add_employee(invalid_employee)
+
+    except ValueError as error:
+        print("Error:", error)
+
+    # Duplicate Employee Number
+    print("\nTrying duplicate employee number...\n")
+
+    try:
+        duplicate_employee = Employee(
+            "Grace Auma",
+            "EMP002",
+            40,
+            9000
+        )
+        payroll.add_employee(duplicate_employee)
+
+    except ValueError as error:
+        print("Error:", error)
