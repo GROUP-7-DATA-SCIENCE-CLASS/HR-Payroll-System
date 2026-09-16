@@ -1,5 +1,5 @@
 # CSC2105 OBJECT-ORIENTED PROGRAMMING USING PYTHON
-## Topic 5 Group Project Report
+## Group Project Report
 
 ### HR / Payroll System (Group 6)
 
@@ -11,7 +11,7 @@
 
 **Course Unit:** CSC2105 – Object-Oriented Programming Using Python
 
-**Academic Year:** 2025/2026
+**Academic Class:** BSDS 2:1
 
 **Group Number:** 6
 
@@ -44,7 +44,7 @@
 
 # 1. Introduction
 
-The Human Resource (HR) Payroll System is a Python application developed as the Topic 5 group project for CSC2105: Object-Oriented Programming Using Python. The project models a real-world payroll scenario using Object-Oriented Programming principles, where employees are represented as objects with their own data and behaviours.
+The Human Resource (HR) Payroll System is a Python application developed as a group project for CSC2105: Object-Oriented Programming Using Python. The project models a real-world payroll scenario using Object-Oriented Programming principles, where employees are represented as objects with their own data and behaviours.
 
 The system calculates weekly salaries for employees based on the number of hours worked and the hourly rate of pay. It also supports overtime calculations, tax deductions, net salary computation, payslip generation, and validation of invalid employee records.
 
@@ -334,6 +334,6 @@ Possible improvements include:
 
 # 12. Conclusion
 
-The HR / Payroll System successfully models a real-world payroll application using Object-Oriented Programming in Python. The project demonstrates the use of classes, objects, constructors, methods, exception handling, and aggregation while meeting the functional requirements provided in the CSC2105 Topic 5 assignment.
+The HR / Payroll System successfully models a real-world payroll application using Object-Oriented Programming in Python. The project demonstrates the use of classes, objects, constructors, methods, exception handling, and aggregation while meeting the functional requirements provided in the assignment.
 
 The system calculates weekly salaries accurately, handles overtime and tax deductions, rejects invalid employee records, generates payslips, and provides a payroll summary for the organisation. The project also demonstrates collaborative software development through GitHub, making it scalable for future Object-Oriented Programming topics.
