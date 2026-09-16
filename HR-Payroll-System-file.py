@@ -215,7 +215,33 @@ def main():
 
     print("\nCreating employees...\n")
 
+    try:
+        employee1 = Employee(
+            "John Okello",
+            "EMP001",
+            35,
+            6000
+        )
+        payroll.add_employee(employee1)
 
+        employee2 = Employee(
+            "Sarah Nakato",
+            "EMP002",
+            47,
+            8000
+        )
+        payroll.add_employee(employee2)
+
+        employee3 = Employee(
+            "Timothy Mugisha",
+            "EMP003",
+            52,
+            10000
+        )
+        payroll.add_employee(employee3)
+
+    except ValueError as error:
+        print("Error:", error)
 
 
     
