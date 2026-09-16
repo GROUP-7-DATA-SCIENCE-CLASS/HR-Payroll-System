@@ -174,3 +174,32 @@ class PayrollSystem:
                 return employee
 
         return None
+# ---------------------------------------------
+# Display All Payslips
+# ---------------------------------------------
+    def display_all_payslips(self):
+        print("\n========== ALL EMPLOYEE PAYSLIPS ==========")
+
+        for employee in self.employees:
+            print(employee.generate_payslip())
+# ---------------------------------------------
+# Weekly Payroll Summary
+# ---------------------------------------------
+    def weekly_summary(self):
+
+        total_gross = 0
+        total_tax = 0
+        total_net = 0
+
+        for employee in self.employees:
+            total_gross += employee.calculate_gross_pay()
+            total_tax += employee.calculate_tax()
+            total_net += employee.calculate_net_pay()
+
+        print("\n============== WEEKLY PAYROLL SUMMARY ==============")
+        print(f"Total Employees : {len(self.employees)}")
+        print(f"Total Gross Pay : UGX {total_gross:,.0f}")
+        print(f"Total Tax Paid  : UGX {total_tax:,.0f}")
+        print(f"Total Net Pay   : UGX {total_net:,.0f}")
+        print("===================================================")
+
