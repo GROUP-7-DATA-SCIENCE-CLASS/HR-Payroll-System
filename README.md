@@ -29,17 +29,7 @@ This project models a payroll management system using Object-Oriented Programmin
 | Methods | calculate_tax(), generate_payslip(), etc. |
 | Exception Handling | ValueError and try/except |
 
-## Repository Structure
 
-```
-weekly-salary-payroll-system/
-├── Group6_System.py
-├── README.md
-├── LICENSE
-├── .gitignore
-├── docs/
-└── tests/
-```
 
 ## How to Run
 
