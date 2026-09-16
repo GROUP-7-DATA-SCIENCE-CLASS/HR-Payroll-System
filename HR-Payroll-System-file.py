@@ -290,3 +290,11 @@ def main():
 
     # Weekly summary
     payroll.weekly_summary()
+
+
+# =====================================================
+# PROGRAM ENTRY POINT
+# =====================================================
+
+if __name__ == "__main__":
+    main()
