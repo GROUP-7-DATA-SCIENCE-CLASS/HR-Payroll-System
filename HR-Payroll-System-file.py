@@ -42,35 +42,35 @@ class Employee:
 # Validation Method
 # ---------------------------------------------
     def validate_inputs(self):
-            if not self.name.strip():
-                raise ValueError("Employee name cannot be empty.")
+        if not self.name.strip():
+            raise ValueError("Employee name cannot be empty.")
 
-            if self.hours_worked < 0:
-                raise ValueError("Hours worked cannot be negative.")
+        if self.hours_worked < 0:
+            raise ValueError("Hours worked cannot be negative.")
 
-            if self.hourly_rate <= 0:
-                raise ValueError("Hourly rate must be greater than zero.")
+        if self.hourly_rate <= 0:
+            raise ValueError("Hourly rate must be greater than zero.")
 
 # ---------------------------------------------
 # Regular Pay
 # ---------------------------------------------
     def calculate_regular_pay(self):
-            regular_hours = min(self.hours_worked, REGULAR_HOURS)
-            return regular_hours * self.hourly_rate
-      
+        regular_hours = min(self.hours_worked, REGULAR_HOURS)
+        return regular_hours * self.hourly_rate
+
 # ---------------------------------------------
 # Overtime Hours
 # ---------------------------------------------
     def calculate_overtime_hours(self):
-            return max(0, self.hours_worked - REGULAR_HOURS)
+        return max(0, self.hours_worked - REGULAR_HOURS)
 
 # ---------------------------------------------
 # Overtime Pay
 # ---------------------------------------------
     def calculate_overtime_pay(self):
-            overtime_hours = self.calculate_overtime_hours()
-            overtime_rate = self.hourly_rate * OVERTIME_RATE_MULTIPLIER
-            return overtime_hours * overtime_rate
+        overtime_hours = self.calculate_overtime_hours()
+        overtime_rate = self.hourly_rate * OVERTIME_RATE_MULTIPLIER
+        return overtime_hours * overtime_rate
       
       
 # ---------------------------------------------
@@ -131,7 +131,7 @@ class Employee:
         
     # String Representation
     # ---------------------------------------------
-    def _str_(self):
+    def __str__(self):
         return (f"{self.employee_number} | "
             f"{self.name} | "
             f"Net Pay: UGX {self.calculate_net_pay():,.0f}")
@@ -147,8 +147,9 @@ class PayrollSystem:
     Stores and manages multiple employees.
     """
 
-    def _init_(self):
+    def __init__(self):
         self.employees = []
+
 # ---------------------------------------------
 # Add Employee
 # ---------------------------------------------
