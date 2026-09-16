@@ -23,3 +23,14 @@ class PayrollSystem:
 
         self.employees.append(employee)
         print(f"Employee '{employee.name}' added successfully.")
+
+
+# ---------------------------------------------
+    # Find Employee
+    # ---------------------------------------------
+    def find_employee(self, employee_number):
+        for employee in self.employees:
+            if employee.employee_number == employee_number:
+                return employee
+
+        return None
