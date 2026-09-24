@@ -267,92 +267,117 @@ def get_menu_choice():
         print("Invalid choice. Please enter a number between 1 and 5.")
 
 
-
 # =====================================================
-# DEMONSTRATION
+# MAIN PROGRAM (HR USER INTERFACE)
 # =====================================================
 
 def main():
 
     payroll = PayrollSystem()
 
-    print("\nCreating employees...\n")
+    print("=" * 60)
+    print("         HR WEEKLY PAYROLL MANAGEMENT SYSTEM")
+    print("=" * 60)
 
-    try:
-        employee1 = Employee(
-            "John Okello",
-            "EMP001",
-            35,
-            6000
-        )
-        payroll.add_employee(employee1)
+    while True:
 
-        employee2 = Employee(
-            "Sarah Nakato",
-            "EMP002",
-            47,
-            8000
-        )
-        payroll.add_employee(employee2)
+        print("\nMAIN MENU")
+        print("-" * 25)
+        print("1. Add New Employee")
+        print("2. Search Employee Payslip")
+        print("3. Display All Employee Payslips")
+        print("4. Weekly Payroll Summary")
+        print("5. Exit Program")
+        print("-" * 25)
 
-        employee3 = Employee(
-            "Timothy Mugisha",
-            "EMP003",
-            52,
-            10000
-        )
-        payroll.add_employee(employee3)
+        choice = get_menu_choice()
 
-    except ValueError as error:
-        print("Error:", error)
+        # ---------------------------------------------
+        # OPTION 1: ADD EMPLOYEE
+        # ---------------------------------------------
+        if choice == "1":
 
+            print("\nADD NEW EMPLOYEE")
+            print("-" * 25)
 
-     # Invalid Employee
-    print("\nTrying invalid employee...\n")
+            try:
+                name = get_non_empty_string("Employee Name: ")
 
-    try:
-        invalid_employee = Employee(
-            "Peter",
-            "EMP004",
-            -5,
-            7000
-        )
-        payroll.add_employee(invalid_employee)
+                employee_number = get_non_empty_string(
+                    "Employee Number (e.g. EMP001): "
+                ).upper()
 
-    except ValueError as error:
-        print("Error:", error)
+                hours_worked = get_hours_worked()
 
-    # Duplicate Employee Number
-    print("\nTrying duplicate employee number...\n")
+                hourly_rate = get_hourly_rate()
 
-    try:
-        duplicate_employee = Employee(
-            "Grace Auma",
-            "EMP002",
-            40,
-            9000
-        )
-        payroll.add_employee(duplicate_employee)
+                employee = Employee(
+                    name,
+                    employee_number,
+                    hours_worked,
+                    hourly_rate
+                )
 
-    except ValueError as error:
-        print("Error:", error)
+                payroll.add_employee(employee)
 
-     # Search Employee
-    print("\nSearching employee EMP002...\n")
+                print("\n✅ Employee added successfully!")
 
-    found = payroll.find_employee("EMP002")
+            except ValueError as error:
+                print(f"\n❌ Error: {error}")
 
-    if found:
-        print(found.generate_payslip())
-    else:
-        print("Employee not found.")
+        # ---------------------------------------------
+        # OPTION 2: SEARCH EMPLOYEE
+        # ---------------------------------------------
+        elif choice == "2":
 
+            print("\nSEARCH EMPLOYEE")
+            print("-" * 25)
 
-    # Display all payslips
-    payroll.display_all_payslips()
+            employee_number = get_non_empty_string(
+                "Enter Employee Number: "
+            ).upper()
 
-    # Weekly summary
-    payroll.weekly_summary()
+            employee = payroll.find_employee(employee_number)
+
+            if employee:
+                print(employee.generate_payslip())
+            else:
+                print(f"❌ Employee '{employee_number}' not found.")
+
+        # ---------------------------------------------
+        # OPTION 3: DISPLAY ALL PAYSLIPS
+        # ---------------------------------------------
+        elif choice == "3":
+
+            print("\nDISPLAY ALL PAYSLIPS")
+            print("-" * 30)
+
+            if len(payroll.employees) == 0:
+                print("❌ No employees have been added yet.")
+            else:
+                payroll.display_all_payslips()
+
+        # ---------------------------------------------
+        # OPTION 4: WEEKLY SUMMARY
+        # ---------------------------------------------
+        elif choice == "4":
+
+            print("\nWEEKLY PAYROLL SUMMARY")
+            print("-" * 30)
+
+            if len(payroll.employees) == 0:
+                print("❌ No employees available.")
+            else:
+                payroll.weekly_summary()
+
+        # ---------------------------------------------
+        # OPTION 5: EXIT PROGRAM
+        # ---------------------------------------------
+        elif choice == "5":
+
+            print("\nThank you for using the HR Weekly Payroll System.")
+            print("Program terminated successfully.")
+            break
 
 
 # =====================================================
